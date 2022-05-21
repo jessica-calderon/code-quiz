@@ -11,22 +11,31 @@
     <!-- high score header start -->
     <header class="top-header" id="header">
         <div class="high-scores-header">
-            <div class="high-scores">
-                <button class="view-hs" id="hs-btn" type = "button">View High Scores</button>
+            <div class="hs-timer">
+                <button class="view-hs" id="hs-btn" type="button">View High Scores</button>
             </div>
-            <div class="timer-section">
-                <p class="timer">Timer: 80</p>
+            <div class="hs-timer">
+                <p class="timer">Time: 80</p>
             </div>
         </div>
     </header>
     <!-- header end -->
-    <div class="quiz-header">
-        <h1 class="title">Code Quiz Challenge</h1>
-        <h2 class="header-text">
-            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
-        </h2>
+    <main>
+        <!-- challenge div start -->
+ <section class="wrapper" id="challenge-section">
+    <div class="quiz-start">
+        <h1 class="quiz-title">Code Quiz Challenge</h1>
     </div>
- 
+    <div class="start-p">
+        <p class="starter-text">
+            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
+        </p>
+    </div>
+    <!-- quiz start and results button -->
+    <div class="start-results" id="start-quiz">
+        <button id="start" class="start-btn all-btns">Start Quiz</button>
+    </div>
+</section>
     <link rel="script" href="assets/script.js">
 </body>
 </html>

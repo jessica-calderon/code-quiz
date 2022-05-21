@@ -1,0 +1,54 @@
+:root {
+    --primary-color: black;
+    --secondary-color: whitesmoke;
+    --tertiary-color: grey;
+    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+/* header style start */
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 15px;
+    padding: 5px;
+    align-content: center;
+}
+.hs-timer {
+    font-size: 16px;
+    font-weight: 100;
+    background-color: transparent;
+}
+.view-hs {
+    color: var(--tertiary-color);
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+}
+/* header style end */
+/* challenge start */
+div .starter-text {
+    font-size: 20px;
+    padding: 0 45px;
+    text-align: justify;
+}
+/* all buttons */
+.all-btns {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 12px;
+    width: 200px;
+    border: 1px solid var(--tertiary-color);
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+}
