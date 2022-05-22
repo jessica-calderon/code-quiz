@@ -52,3 +52,15 @@ div .starter-text {
     padding: 10px;
     margin: 5px;
 }
+/* media query for smaller desktops */
+@media screen and (max-width: 980px) {
+
+}
+/* media query for tablets and smaller */
+@media screen and (max-width: 768px) {
+
+}
+/* media query for mobile phones and smaller */
+@media screen and (max-width: 575px) {
+
+}

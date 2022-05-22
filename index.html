@@ -11,31 +11,78 @@
     <!-- high score header start -->
     <header class="top-header" id="header">
         <div class="high-scores-header">
-            <div class="hs-timer">
+            <div class="inner-div">
                 <button class="view-hs" id="hs-btn" type="button">View High Scores</button>
             </div>
-            <div class="hs-timer">
+            <div class="inner-div">
                 <p class="timer">Time: 80</p>
             </div>
         </div>
     </header>
     <!-- header end -->
     <main>
-        <!-- challenge div start -->
- <section class="wrapper" id="challenge-section">
-    <div class="quiz-start">
-        <h1 class="quiz-title">Code Quiz Challenge</h1>
-    </div>
-    <div class="start-p">
-        <p class="starter-text">
-            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
-        </p>
-    </div>
+    <!-- challenge div start -->
+    <section class="wrapper" id="challenge-section">
+        <div class="quiz-start">
+            <h1 class="quiz-title">Code Quiz Challenge</h1>
+        </div>
+        <div class="start-p">
+            <p class="starter-text">
+                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
+            </p>
+        </div>
+    <!-- challenge div end -->
     <!-- quiz start and results button -->
     <div class="start-results" id="start-quiz">
         <button id="start" class="start-btn all-btns">Start Quiz</button>
     </div>
-</section>
-    <link rel="script" href="assets/script.js">
+    </section>
+
+    <!-- hidden questions start -->
+    <section class="questions-lists" id="questions">
+        <div class="questions-div">
+            <div class="list">
+                <ul class="ul-quiz">
+                    <h2 class="change" id="question">Quiz Start</h2>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div id="results" class="light">
+                    <!-- js results -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="scores" id="final">
+        <div class="inner-div">
+            <div class="final-wrapper">
+                <h2>Quiz Completed!</h2>
+                <p class="final-score">Your final score is:
+                    <span id="score">0</span>
+                </p>
+                <p class="initals-style">Enter your initials:
+                    <span class="initials"><input placeholder="initials" id="initials"></span>
+                    <button class="submit-btn all-btns" id="sub-btn">Submit</button>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="high-score-section">
+        <div class="inner-div">
+            <p class="hs-style">
+                <h2>High Scores</h2>
+            </p>
+            <!-- start scores list js -->
+            <ol class="scores-list"></ol>
+            <button id="back" class="back-btn all-btns">Back</button>
+            <button id="clear" class="clear-btn all-btns">Clear All Scores</button>
+        </div>
+    </div>
+    </section>
+    </main>
+
+    <script src="./assets/script.js"></script>
 </body>
-</html>
+</html> 
