@@ -1,7 +1,7 @@
 :root {
     --primary-color: black;
     --secondary-color: whitesmoke;
-    --tertiary-color: grey;
+    --tertiary-color: rgb(223, 223, 223);
     }
 * {
     box-sizing: border-box;
@@ -22,7 +22,7 @@ header div {
     padding: 5px;
     align-content: center;
 }
-.hs-timer {
+.inner-div {
     font-size: 16px;
     font-weight: 100;
     background-color: transparent;
@@ -41,6 +41,42 @@ div .starter-text {
     padding: 0 45px;
     text-align: justify;
 }
+div .intro-style {
+    font-size: 24px;
+    padding: 0 50px;
+    text-align: justify;
+}
+div .initials-style {
+    font: 30px/2px;
+    padding-block: 10px;
+
+}
+
+/* hidden quiz  */
+section .wrapper {
+    display: grid;
+    grid-template-rows: 1fr, 2fr, 1fr;
+    grid-gap: 1px;
+    grid-auto-rows: (10ox, auto);
+    justify-items: left;
+}
+
+div .final-wrapper, .hs-style {
+    display: grid;
+    grid-template-rows: 1fr, 2fr;
+    grid-auto-rows: (10px, auto);
+    flex: wrap;
+    align-content: space-between;
+    justify-content: left;
+}
+
+section div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    padding: 10px;
+    justify-content: space-around;
+}
 /* all buttons */
 .all-btns {
     background-color: var(--secondary-color);
@@ -51,6 +87,11 @@ div .starter-text {
     font-size: 18px;
     padding: 10px;
     margin: 5px;
+}
+.all-btns:active {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 }
 /* media query for smaller desktops */
 @media screen and (max-width: 980px) {
