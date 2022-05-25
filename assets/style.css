@@ -52,6 +52,7 @@ div .initials-style {
 
 }
 
+
 /* hidden quiz  */
 section .wrapper {
     display: grid;
@@ -76,6 +77,25 @@ section div {
     margin: 20px auto;
     padding: 10px;
     justify-content: space-around;
+}
+
+/* questions style */
+div .list {
+    justify-content: start;
+}
+.list {
+    justify-items: center;
+    display: grid;
+    grid-template-rows: 1fr, 2fr, 1fr;
+    grid-auto-rows: (10px, auto);
+    grid-gap: 1px;
+}
+.ul-quiz {
+    list-style: none;
+    display: contents;
+}
+.questions-list {
+    width: 350px;
 }
 /* all buttons */
 .all-btns {
