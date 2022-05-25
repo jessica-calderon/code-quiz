@@ -146,6 +146,7 @@ div .list {
     display: none;
 }
 
+/* TODO: media queries  */
 /* media query for smaller desktops */
 @media screen and (max-width: 980px) {
 
