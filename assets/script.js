@@ -68,3 +68,24 @@ function setTime() {
         }
     }, 1000);
 }
+
+/* start quiz function */
+function startQuiz() {
+    quizStart.style.display = "none";
+    questionsEl.style.display = "block";
+    questionCount = 0;
+
+    setTime();
+    setQuestion(questionCount);
+}
+
+/* question show function */
+function setQuestion(id) {
+    if (id < questions.length) {
+        questionEl.textContent = questions[id].question;
+        ansBtn1.textContent = questions[id].answers[0];
+        ansBtn2.textContent = questions[id].answers[1];
+        ansBtn3.textContent = questions[id].answers[2];
+        ansBtn4.textContent = questions[id].answers[3];
+    }
+}
