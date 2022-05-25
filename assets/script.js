@@ -11,6 +11,25 @@ var secLeft = 80;
 /* start quiz variable */
 var quizStart = document.querySelector("#challenge-section");
 
+/* load hidden elements */
+var questionsEl = document.querySelector(".questions-lists");
+
+var questionEl = document.querySelector("#question");
+var rightWrong = document.querySelector("#results");
+var questionCount = 0;
+
+/* final score  */
+var finalScoreEl = document.querySelector("#final");
+var initialInput = document.querySelector("#initials");
+
+/* high score */
+var highScoreEl = document.querySelector("#high-score-section");
+var scoreListEl = document.querySelector(".scores-list");
+var scoreList = [];
+
+/* answer button */
+var answerBtn = document.querySelector("button.answers-btn");
+
 /* quiz questions array */
 var questions = [
     {
@@ -34,3 +53,18 @@ var questions = [
     correct: "0"
     }
 ];
+
+/* timer start function */
+function setTime() {
+    var timerInterval = setInterval(function () {
+        secLeft--;
+        time.textContent = 'Time:${secondsLeft}s';
+
+        if (secLeft === 0 || questionCount === questions.length) {
+            clearInterval(timerInterval);
+            questionsEl.style.display = "none";
+            finalScoreEl.style.display = "block";
+            score.textContent = secLeft;
+        }
+    }, 1000);
+}
