@@ -26,6 +26,8 @@ header div {
     font-size: 16px;
     font-weight: 100;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
 }
 .view-hs {
     color: var(--tertiary-color);
@@ -98,6 +100,14 @@ div .list {
     width: 350px;
 }
 
+/* final score section */
+
+.scores-list {
+    padding-left: 40px;
+}
+.input-style {
+    height: 25px;
+}
 /* all buttons */
 .all-btns {
     background-color: var(--secondary-color);
@@ -130,6 +140,12 @@ div .list {
     background-color: var(--secondary-color);
     border: 1px solid white;
 }
+
+/* hide questions, final scores, high scores, and answer key */
+#questions, #final, #high-scores-section {
+    display: none;
+}
+
 /* media query for smaller desktops */
 @media screen and (max-width: 980px) {
 
