@@ -13,6 +13,7 @@ A timed coding-based multiple choice quiz.
 * JavaScript
 
 ## Website
+https://jessica-calderon.github.io/code-quiz/
 
 ## Website Screenshot
 

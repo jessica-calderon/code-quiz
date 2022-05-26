@@ -53,6 +53,13 @@ div .initials-style {
     padding-block: 10px;
 
 }
+.quiz-title {
+    font-size: 38px;
+    color: var(--primary-color);
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+}
 
 
 /* hidden quiz  */
@@ -142,7 +149,7 @@ div .list {
 }
 
 /* hide questions, final scores, high scores, and answer key */
-#questions, #final, #high-scores-section {
+#questions, #final, #high-score-section {
     display: none;
 }
 
