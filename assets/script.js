@@ -89,3 +89,32 @@ function setQuestion(id) {
         ansBtn4.textContent = questions[id].answers[3];
     }
 }
+
+/* check answers function */
+function checkAnswers(id) {
+    event.preventDefault();
+
+    /* right-wrong element */
+    rightWrong.style.display = "block";
+    var p = document.createElement("p");
+    rightWrong.appendChild(p);
+
+    /* display right-wrong for specified time */
+    setTimeout(function () {
+        p.style.display = 'none';
+    }, 1000);
+    /* display right on right answer */
+    if (questions[questionCount].correct === event.target.value) {
+        p.textContent = "Correct!";
+    }
+    /* display wrong on wrong answer */
+    else if (questions[questionCount].correct !== event.target.value) {
+        secLeft = secLeft - 10;
+        p.textContent = "Wrong!";
+    }
+
+    if (questionCount < questions.length) {
+        questionCount++;
+    }
+    setQuestion(questionCount);
+    }
