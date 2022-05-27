@@ -117,4 +117,41 @@ function checkAnswers(id) {
         questionCount++;
     }
     setQuestion(questionCount);
-    }
+}
+
+    function addScore(event) {
+        event.preventDefault();
+
+        finalScoreEl.style.display = "none";
+        highScoreEl.style.display = "block";
+
+        var init = initialInput.value.toUpperCase();
+        scoreList.push({ initials: init, score: secLeft });
+
+        /* sort hs-list */
+        scoreList = scoreList.sort((a, b) => {
+            if (a.score < b.score) {
+                return 1;
+            } else {
+                return -1;
+            }
+            });
+            scoreListEl.innerHTML="";
+            for (let i = 0; i < scoreList.length; i++) {
+                var li = document.createElement("li");
+                li.textContent = '${scoreList[i].initials}: ${scoreList[i].score}';
+                scoreListEl.append(li);
+            }
+            /* hs list storage */
+            storeHs();
+            displayScores();
+        }
+        function storeHs() {
+            localStorage.setItem("scoreList", JSON.stringify(scoreList));
+        }
+        function displayScores() {
+            let savedScores = JSON.parse(localStorage.getItem("scoreList"));
+            if (savedScores !== null) {
+                scoreList = savedScores;
+            }
+        }
