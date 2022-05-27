@@ -22,6 +22,12 @@ var questionCount = 0;
 var finalScoreEl = document.querySelector("#final");
 var initialInput = document.querySelector("#initials");
 
+/* submit, start, view, and clear variables */
+var submitBtn = document.querySelector("#sub-btn");
+var clearBtn = document.querySelector("#clear");
+var hsBtn = document.querySelector("hs-btn");
+var backBtn = document.querySelector("back");
+
 /* high score */
 var highScoreEl = document.querySelector("#high-score-section");
 var scoreListEl = document.querySelector(".scores-list");
@@ -29,6 +35,7 @@ var scoreList = [];
 
 /* answer button */
 var answerBtn = document.querySelector("button.answers-btn");
+
 
 /* quiz questions array */
 var questions = [
@@ -91,7 +98,7 @@ function setQuestion(id) {
 }
 
 /* check answers function */
-function checkAnswers(id) {
+function checkAnswers(event) {
     event.preventDefault();
 
     /* right-wrong element */
@@ -155,3 +162,18 @@ function checkAnswers(id) {
                 scoreList = savedScores;
             }
         }
+        /* clear localstorage for scores */
+        function clearScores(); {
+            localStorage.clear();
+            scoreListEl.innerHTML="";
+        }
+
+    /* function to start quiz */
+    start.addEventListener("click", startQuiz);
+
+    /* answer btn event listener */
+    answerBtn.forEach(item =>  {
+        item.addEventListener("click", checkAnswers); 
+    });
+
+    /* add hs to list */
