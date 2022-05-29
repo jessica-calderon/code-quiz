@@ -106,6 +106,10 @@ div .list {
 .questions-list {
     width: 350px;
 }
+.ans-style {
+    font-size: 42px;
+    color: red;
+}
 
 /* final score section */
 
@@ -137,7 +141,7 @@ div .list {
     background-color: var(--tertiary-color);
     border: 1px solid grey;
     border-radius: 12px;
-    width: 200px;
+    width: 350px;
     font-size: 18px;
     padding: 10px;
     outline: none;
@@ -152,7 +156,7 @@ div .list {
 #questions, #final, #high-score-section {
     display: none;
 }
-
+.answers-btn
 /* TODO: media queries  */
 /* media query for smaller desktops */
 @media screen and (max-width: 980px) {

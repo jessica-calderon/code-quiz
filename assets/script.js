@@ -10,7 +10,7 @@ const start = document.querySelector("#start");
 
 
 /* start quiz variable */
-const quizStart = document.querySelector("#quiz-section");
+const begin = document.querySelector("#quiz-section");
 
 /* load hidden elements */
 var questionsEl = document.querySelector(".questions-lists");
@@ -85,7 +85,7 @@ function setTime() {
 
 /* start quiz function */
 function startQuiz() {
-    // quizStart.style.display = "none";
+    begin.style.display = "none";
     questionsEl.style.display = "block";
     questionCount = 0;
 
@@ -195,7 +195,7 @@ answerBtn.forEach(item => {
     /* back event function */
     backBtn.addEventListener("click", function () {
         highScoreEl.style.display = "none";
-        quizStart.style.display = "block";
+        begin.style.display = "block";
         secLeft = 80;
         time.textContent = `Time:${secondsLeft}s`;
     });
