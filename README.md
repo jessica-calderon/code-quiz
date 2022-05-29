@@ -1,7 +1,7 @@
 # code-quiz
 # Purpose
 A timed coding-based multiple choice quiz. 
-* Users are given 80 seconds to answer 4 multiple choice questions.
+* Users are given 80 seconds to answer 4 multiple choice questions based on the fundamentals of JavaScript.
     * When a user answers a question, they are presented with another question.
     * When users answers a question incorrectly 10 seconds is subtracted from the clock.
 * The game is over when the timer reaches zero or users answer all questions. 
