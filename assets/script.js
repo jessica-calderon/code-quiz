@@ -1,44 +1,51 @@
 /* start quiz code */
 
-/* button variable */
-var start = document.querySelector("#start");
-
 /*  timer variables */
 var score = document.querySelector("#score");
 var time = document.querySelector(".timer");
 var secLeft = 80;
 
+/* button variable */
+const start = document.querySelector("#start");
+
+
 /* start quiz variable */
-var quizStart = document.querySelector("#challenge-section");
+const quizStart = document.querySelector("#quiz-section");
 
 /* load hidden elements */
 var questionsEl = document.querySelector(".questions-lists");
 
-var questionEl = document.querySelector("#question");
-var rightWrong = document.querySelector("#results");
-var questionCount = 0;
+let questionEl = document.querySelector("#question");
+const rightWrong = document.querySelector("#results");
+let questionCount = 0;
 
 /* final score  */
-var finalScoreEl = document.querySelector("#final");
-var initialInput = document.querySelector("#initials");
-
-/* submit, start, view, and clear variables */
-var submitBtn = document.querySelector("#sub-btn");
-var clearBtn = document.querySelector("#clear");
-var hsBtn = document.querySelector("hs-btn");
-var backBtn = document.querySelector("back");
+const finalScoreEl = document.querySelector("#final");
+let initialInput = document.querySelector("#initials");
 
 /* high score */
-var highScoreEl = document.querySelector("#high-score-section");
-var scoreListEl = document.querySelector(".scores-list");
-var scoreList = [];
+const highScoreEl = document.querySelector("#high-score-section");
+let scoreListEl = document.querySelector(".scores-list");
+let scoreList = [];
 
 /* answer button */
-var answerBtn = document.querySelector("button.answers-btn");
+const answerBtn = document.querySelectorAll("button.answers-btn");
+
+/* submit, start, view, and clear variables */
+let submitBtn = document.querySelector("#sub-btn");
+let clearBtn = document.querySelector("#clear");
+let hsBtn = document.querySelector("#hs-btn");
+let backBtn = document.querySelector("#back");
+
+/* answer variables */
+const ansBtn1 = document.querySelector("#answer-0");
+const ansBtn2 = document.querySelector("#answer-1");
+const ansBtn3 = document.querySelector("#answer-2");
+const ansBtn4 = document.querySelector("#answer-3");
 
 
 /* quiz questions array */
-var questions = [
+const questions = [
     {
     question: "How do you create a function in JavaScript?",
     answers: ["1) function = myFunction()", "2) function myFunction()", "3) function:myFunction()", "4) functionMyFunction()"],
@@ -63,7 +70,7 @@ var questions = [
 
 /* timer start function */
 function setTime() {
-    var timerInterval = setInterval(function () {
+    let timerInterval = setInterval(function () {
         secLeft--;
         time.textContent = 'Time:${secondsLeft}s';
 
@@ -78,7 +85,7 @@ function setTime() {
 
 /* start quiz function */
 function startQuiz() {
-    quizStart.style.display = "none";
+    // quizStart.style.display = "none";
     questionsEl.style.display = "block";
     questionCount = 0;
 
@@ -103,22 +110,25 @@ function checkAnswers(event) {
 
     /* right-wrong element */
     rightWrong.style.display = "block";
-    var p = document.createElement("p");
+    let p = document.createElement("p");
     rightWrong.appendChild(p);
 
     /* display right-wrong for specified time */
     setTimeout(function () {
-        p.style.display = 'none';
+        p.style.display = "none";
     }, 1000);
+
     /* display right on right answer */
     if (questions[questionCount].correct === event.target.value) {
         p.textContent = "Correct!";
     }
+
     /* display wrong on wrong answer */
     else if (questions[questionCount].correct !== event.target.value) {
         secLeft = secLeft - 10;
         p.textContent = "Wrong!";
     }
+
 
     if (questionCount < questions.length) {
         questionCount++;
@@ -132,7 +142,7 @@ function checkAnswers(event) {
         finalScoreEl.style.display = "none";
         highScoreEl.style.display = "block";
 
-        var init = initialInput.value.toUpperCase();
+        let init = initialInput.value.toUpperCase();
         scoreList.push({ initials: init, score: secLeft });
 
         /* sort hs-list */
@@ -143,12 +153,14 @@ function checkAnswers(event) {
                 return -1;
             }
             });
+
             scoreListEl.innerHTML="";
             for (let i = 0; i < scoreList.length; i++) {
-                var li = document.createElement("li");
+                let li = document.createElement("li");
                 li.textContent = '${scoreList[i].initials}: ${scoreList[i].score}';
                 scoreListEl.append(li);
             }
+
             /* hs list storage */
             storeHs();
             displayScores();
@@ -156,24 +168,50 @@ function checkAnswers(event) {
         function storeHs() {
             localStorage.setItem("scoreList", JSON.stringify(scoreList));
         }
+
         function displayScores() {
+
             let savedScores = JSON.parse(localStorage.getItem("scoreList"));
             if (savedScores !== null) {
                 scoreList = savedScores;
             }
         }
-        /* clear localstorage for scores */
-        function clearScores(); {
-            localStorage.clear();
-            scoreListEl.innerHTML="";
-        }
+/* clear local storage high scores */
+function clearScores() {
+    localStorage.clear();
+    scoreListEl.innerHTML="";
+}
 
     /* function to start quiz */
     start.addEventListener("click", startQuiz);
 
-    /* answer btn event listener */
-    answerBtn.forEach(item =>  {
-        item.addEventListener("click", checkAnswers); 
-    });
+answerBtn.forEach(item => {
+    item.addEventListener('click', checkAnswers);
+});
 
     /* add hs to list */
+    submitBtn.addEventListener("click", addScore);
+
+    /* back event function */
+    backBtn.addEventListener("click", function () {
+        highScoreEl.style.display = "none";
+        quizStart.style.display = "block";
+        secLeft = 80;
+        time.textContent = `Time:${secondsLeft}s`;
+    });
+
+    /* clear btn */
+    clearBtn.addEventListener("click", clearScores);
+
+    /* no score message display and listener event */
+hsBtn.addEventListener("click", function () {
+    if (highScoreEl.style.display === "none") {
+        highScoreEl.style.display = "block";
+    }
+    else if (highScoreEl.style.display === "block") {
+        highScoreEl.style.display = "none";
+    }
+    else {
+        return alert("Please take the quiz to view high scores!");
+    }
+});
