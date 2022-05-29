@@ -16,6 +16,6 @@ A timed coding-based multiple choice quiz.
 https://jessica-calderon.github.io/code-quiz/
 
 ## Website Screenshot
-
+![index](./assets/images/code-quiz.gif)
 ## Contribution 
 ### Made by Jessica E. Calderon
