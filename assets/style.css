@@ -44,7 +44,7 @@ div .starter-text {
     text-align: justify;
 }
 div .intro-style {
-    font-size: 24px;
+    font-size: 28px;
     padding: 0 50px;
     text-align: justify;
 }
@@ -189,17 +189,23 @@ div .list {
     .quiz-title {
         font-size: 36px;
     }
+
 }
 /* media query for tablets and smaller */
 @media screen and (max-width: 768px) {
     .quiz-title {
         font-size: 32px;
     }
-    
+    div .intro-style {
+        font-size: 24px;
+    }
 }
 /* media query for mobile phones and smaller */
 @media screen and (max-width: 575px) {
     .quiz-title {
         font-size: 28px;
+    }
+    div .intro-style {
+        font-size: 18px;
     }
 }
