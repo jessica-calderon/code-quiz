@@ -186,13 +186,20 @@ div .list {
 /* TODO: media queries  */
 /* media query for smaller desktops */
 @media screen and (max-width: 980px) {
-
+    .quiz-title {
+        font-size: 36px;
+    }
 }
 /* media query for tablets and smaller */
 @media screen and (max-width: 768px) {
-
+    .quiz-title {
+        font-size: 32px;
+    }
+    
 }
 /* media query for mobile phones and smaller */
 @media screen and (max-width: 575px) {
-
+    .quiz-title {
+        font-size: 28px;
+    }
 }
