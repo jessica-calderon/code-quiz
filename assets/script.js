@@ -72,7 +72,7 @@ const questions = [
 function setTime() {
     let timerInterval = setInterval(function () {
         secLeft--;
-        time.textContent = 'Time:${secondsLeft}s';
+        time.textContent = `Time Remaining: ${secLeft} seconds`;
 
         if (secLeft === 0 || questionCount === questions.length) {
             clearInterval(timerInterval);
@@ -126,7 +126,7 @@ function checkAnswers(event) {
     /* display wrong on wrong answer */
     else if (questions[questionCount].correct !== event.target.value) {
         secLeft = secLeft - 10;
-        p.textContent = "Wrong!";
+        p.textContent = "Incorrect!";
     }
 
 
@@ -157,7 +157,7 @@ function checkAnswers(event) {
             scoreListEl.innerHTML="";
             for (let i = 0; i < scoreList.length; i++) {
                 let li = document.createElement("li");
-                li.textContent = '${scoreList[i].initials}: ${scoreList[i].score}';
+                li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
                 scoreListEl.append(li);
             }
 
@@ -197,7 +197,7 @@ answerBtn.forEach(item => {
         highScoreEl.style.display = "none";
         begin.style.display = "block";
         secLeft = 80;
-        time.textContent = `Time:${secondsLeft}s`;
+        time.textContent = `Time Remaining: ${secLeft} seconds`;
     });
 
     /* clear btn */
