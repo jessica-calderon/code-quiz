@@ -104,7 +104,7 @@ div .list {
 
 }
 .ul-quiz {
-    list-style: none;
+    list-style-type: lower-latin;
     display: contents;
 }
 .questions-list {
