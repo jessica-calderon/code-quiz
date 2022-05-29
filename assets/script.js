@@ -15,6 +15,7 @@ const begin = document.querySelector("#quiz-section");
 /* load hidden elements */
 var questionsEl = document.querySelector(".questions-lists");
 
+/* question and results elements */
 let questionEl = document.querySelector("#question");
 const rightWrong = document.querySelector("#results");
 let questionCount = 0;
@@ -136,6 +137,7 @@ function checkAnswers(event) {
     setQuestion(questionCount);
 }
 
+/* function to add initials to hs list */
     function addScore(event) {
         event.preventDefault();
 

@@ -99,6 +99,10 @@ div .list {
     grid-auto-rows: (10px, auto);
     grid-gap: 1px;
 }
+.change {
+    margin-bottom: 25px;
+
+}
 .ul-quiz {
     list-style: none;
     display: contents;
