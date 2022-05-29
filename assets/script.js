@@ -72,7 +72,7 @@ const questions = [
 function setTime() {
     let timerInterval = setInterval(function () {
         secLeft--;
-        time.textContent = `Time Remaining: ${secLeft} seconds`;
+        time.textContent = `Timer: ${secLeft} seconds`;
 
         if (secLeft === 0 || questionCount === questions.length) {
             clearInterval(timerInterval);
@@ -197,7 +197,7 @@ answerBtn.forEach(item => {
         highScoreEl.style.display = "none";
         begin.style.display = "block";
         secLeft = 80;
-        time.textContent = `Time Remaining: ${secLeft} seconds`;
+        time.textContent = `Timer: ${secLeft} seconds`;
     });
 
     /* clear btn */

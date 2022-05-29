@@ -15,7 +15,8 @@
                 <button class="view-hs" id="hs-btn" type="button">View High Scores</button>
             </div>
             <div class="inner-div">
-                <p class="timer">Time Remaining: 80</p>
+                <p class="timer">
+                Timer: 80</p>
             </div>
         </div>
     </header>
@@ -64,28 +65,32 @@
         </div>
     </section>
     <section class="scores" id="final">
-        <div class="inner-div">
+        <div class="quiz-complete">
             <div class="final-wrapper">
                 <h2>Quiz Completed!</h2>
                 <p class="final-score">Your final score is:
                     <span id="score">0</span>
                 </p>
                 <p class="initals-style">Enter your initials:
-                    <span class="initials"><input placeholder="initials" id="initials" class="input-style"></span>
-                    <button class="submit-btn all-btns" id="sub-btn">Submit</button>
+                <span class="initials"><input placeholder="initials" id="initials" class="input-style"></span>
+                <div>    
+                <button class="submit-btn all-btns" id="sub-btn">Submit</button>
+                </div>
                 </p>
             </div>
         </div>
     </section>
     <section id="high-score-section">
-        <div class="inner-div">
+        <div class="scores-div">
             <p class="hs-style">
                 <h2>High Scores</h2>
             </p>
             <!-- start scores list js -->
             <ol class="scores-list"></ol>
+            <div class="btns-sec">
             <button id="back" class="back-btn all-btns">Back</button>
             <button id="clear" class="clear-btn all-btns">Clear All Scores</button>
+            </div>
         </div>
     </div>
     </section>
