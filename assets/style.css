@@ -31,7 +31,6 @@ header div {
 }
 .view-hs {
     color: var(--tertiary-color);
-    font-size: 16px;
     border: none;
     background-color: transparent;
     padding: 10px;
@@ -104,7 +103,7 @@ div .list {
 
 }
 .ul-quiz {
-    list-style-type: lower-latin;
+    list-style: none;
     display: contents;
 }
 .questions-list {

@@ -49,22 +49,22 @@ const ansBtn4 = document.querySelector("#answer-3");
 const questions = [
     {
     question: "How do you create a function in JavaScript?",
-    answers: ["function = myFunction()", "function myFunction()", "function:myFunction()", "functionMyFunction()"],
+    answers: ["a) function = myFunction()", "b) function myFunction()", "c) function:myFunction()", "d) functionMyFunction()"],
     correct: "1"
     },
     {
     question: "Which sign turns 'true' into 'false'?",
-    answers: ["?", "-", "|", "!"],
+    answers: ["a) ?", "b) -", "c) |", "d) !"],
     correct: "3"
     },
     {
     question: "How can you add a comment in JavaScript?",
-    answers: ["<!-- This is a comment -->", "-This is a comment-", "// This is a comment", "'This is a comment'"],
+    answers: ["a) <!-- This is a comment -->", "b) -This is a comment-", "c) // This is a comment", "d) 'This is a comment'"],
     correct: "2"
     },
     {
     question: "What event occurs when a user clicks on an HTML element?",
-    answers: ["onclick", "onmouseover", "onchange", "onmouseclick"],
+    answers: ["a) onclick", "b) onmouseover", "c) onchange", "d) onmouseclick"],
     correct: "0"
     }
 ];
